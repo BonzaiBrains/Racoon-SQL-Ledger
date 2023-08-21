@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #=====================================================================
 #
@@ -48,8 +48,8 @@ if ($form->{action}) {
 
 sub login_screen {
 
-  $form->{stylesheet} = "sql-ledger.css";
-  $form->{favicon} = "sql-ledger.ico";
+  $form->{stylesheet} = "Racoon-SQL-Ledger.css";
+  $form->{favicon} = "Racoon-SQL-Ledger.ico";
 
   $form->header;
 
@@ -88,7 +88,7 @@ function jsp() {
 <center>
 <table class=login border=3 cellpadding=20>
   <tr>
-    <td class=login align=center><a href="http://www.sql-ledger.com" target=_blank><img src=$images/sql-ledger.png border=0></a>
+    <td class=login align=center><a href="https://github.com/BonzaiBrains/Racoon-SQL-Ledger" target=_blank><img src=$images/Racoon-SQL-Ledger.png border=0></a>
 <h1 class=login align=center>|.$locale->text('Version').qq| $form->{version}</h1>
 
 <p>
@@ -135,11 +135,11 @@ function jsp() {
 sub selectdataset {
   my ($login) = @_;
   
-  if (-f "css/sql-ledger.css") {
-    $form->{stylesheet} = "sql-ledger.css";
+  if (-f "css/Racoon-SQL-Ledger.css") {
+    $form->{stylesheet} = "Racoon-SQL-Ledger.css";
   }
-  if (-f sql-ledger.ico) {
-    $form->{favicon} = "sql-ledger.ico";
+  if (-f Racoon-SQL-Ledger.ico) {
+    $form->{favicon} = "Racoon-SQL-Ledger.ico";
   }
 
   delete $self->{sessioncookie};
@@ -155,7 +155,7 @@ sub selectdataset {
 <center>
 <table class=login border=3 cellpadding=20>
   <tr>
-    <td class=login align=center><a href="http://www.sql-ledger.com" target=_blank><img src=$images/sql-ledger.png border=0></a>
+    <td class=login align=center><a href="https://github.com/BonzaiBrains/Racoon-SQL-Ledger" target=_blank><img src=$images/Racoon-SQL-Ledger.png border=0></a>
 <h1 class=login align=center>|.$locale->text('Version').qq| $form->{version}</h1>
 
 <p>
@@ -216,8 +216,8 @@ sub selectdataset {
 
 sub login {
 
-  $form->{stylesheet} = "sql-ledger.css";
-  $form->{favicon} = "sql-ledger.ico";
+  $form->{stylesheet} = "Racoon-SQL-Ledger.css";
+  $form->{favicon} = "Racoon-SQL-Ledger.ico";
   
   $form->error($locale->text('You did not enter a name!')) unless ($form->{login});
 
@@ -401,13 +401,13 @@ sub email_tan {
 
   $mail->{message} = $locale->text('TAN').": $tan";
   $mail->{from} = $mail->{to} = qq|"$user->{name}" <$user->{email}>|;
-  $mail->{subject} = "SQL-Ledger $form->{version} $user->{company} $mail->{message}";
+  $mail->{subject} = "Racoon-SQL-Ledger $form->{version} $user->{company} $mail->{message}";
 
 
   $form->error($err) if ($err = $mail->send($sendmail));
 
   $form->{stylesheet} = $user->{stylesheet};
-  $form->{favicon} = "sql-ledger.ico";
+  $form->{favicon} = "Racoon-SQL-Ledger.ico";
   $form->{nextsub} = "tan_login";
 
   $user->{password} = $tan;
@@ -428,7 +428,7 @@ sub email_tan {
 <center>
 <table class=login border=3 cellpadding=20>
   <tr>
-    <td class=login align=center><a href="http://www.sql-ledger.com" target=_blank><img src=$images/sql-ledger.png border=0></a>
+    <td class=login align=center><a href="https://github.com/BonzaiBrains/Racoon-SQL-Ledger" target=_blank><img src=$images/Racoon-SQL-Ledger.png border=0></a>
 <h1 class=login align=center>|.$locale->text('Version').qq| $form->{version}</h1>
 <h1 class=login align=center>$user->{company}</h1>
 

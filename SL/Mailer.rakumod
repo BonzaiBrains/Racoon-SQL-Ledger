@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger ERP
+# Racoon-SQL-Ledger ERP
 # Copyright (C) 2006
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -65,7 +65,7 @@ sub send {
 To: $h{to}
 $h{cc}$h{bcc}$h{subject}
 Message-ID: <$msgid>
-$h{notify}X-Mailer: SQL-Ledger $self->{version}
+$h{notify}X-Mailer: Racoon-SQL-Ledger $self->{version}
 MIME-Version: 1.0
 |;
 

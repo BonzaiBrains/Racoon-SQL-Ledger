@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #=====================================================================
 #

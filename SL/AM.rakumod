@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger ERP
+# Racoon-SQL-Ledger ERP
 # Copyright (c) 2006
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -1966,7 +1966,7 @@ sub backup {
 
   $myconfig->{dbhost} = 'localhost' unless $myconfig->{dbhost};
   
-  print OUT qq|-- SQL-Ledger Backup
+  print OUT qq|-- Racoon-SQL-Ledger Backup
 -- Dataset: $myconfig->{dbname}
 -- Version: $form->{dbversion}
 -- Host: $myconfig->{dbhost}
@@ -2104,7 +2104,7 @@ $myconfig->{dboptions};
     $mail->{charset} = $form->{charset};
     $mail->{to} = qq|"$myconfig->{name}" <$myconfig->{email}>|;
     $mail->{from} = qq|"$myconfig->{name}" <$myconfig->{email}>|;
-    $mail->{subject} = "SQL-Ledger Backup / $myconfig->{dbname}-$form->{version}-$t[5]$t[4]$t[3].sql$suffix";
+    $mail->{subject} = "Racoon-SQL-Ledger Backup / $myconfig->{dbname}-$form->{version}-$t[5]$t[4]$t[3].sql$suffix";
     @{ $mail->{attachments} } = ($tmpfile);
     $mail->{version} = $form->{version};
     $mail->{fileid} = "$boundary.";

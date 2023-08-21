@@ -1,11 +1,11 @@
 #!/usr/bin/raku
 #
 ######################################################################
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #######################################################################
 #
@@ -31,7 +31,7 @@ BEGIN {
 
 $| = 1;
 
-eval { require "sql-ledger.conf"; };
+eval { require "Racoon-SQL-Ledger.conf"; };
 
 
 if ($ENV{CONTENT_LENGTH}) {

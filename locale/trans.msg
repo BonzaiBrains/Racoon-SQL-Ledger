@@ -11,6 +11,6 @@ If you require any assistance let me know.
 
 -- 
 kind regards,
-Dieter Simader, SQL-Ledger
-http://www.sql-ledger.org
+Dieter Simader, Racoon-SQL-Ledger
+http://www.Racoon-SQL-Ledger.org
 

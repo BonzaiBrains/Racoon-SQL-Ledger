@@ -1,9 +1,9 @@
 #=================================================================
-# SQL-Ledger ERP
+# Racoon-SQL-Ledger ERP
 # Copyright (C) 2006
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 
@@ -445,7 +445,7 @@ sub header {
   if ($ENV{HTTP_USER_AGENT}) {
 
     if ($self->{stylesheet} && (-f "css/$self->{stylesheet}")) {
-      $stylesheet = qq|<LINK REL="stylesheet" HREF="css/$self->{stylesheet}" TYPE="text/css" TITLE="SQL-Ledger stylesheet">
+      $stylesheet = qq|<LINK REL="stylesheet" HREF="css/$self->{stylesheet}" TYPE="text/css" TITLE="Racoon-SQL-Ledger stylesheet">
   |;
     }
 
@@ -460,7 +460,7 @@ sub header {
   |;
     }
 
-    my $title = ($self->{title}) ? $self->{title} : "SQL-Ledger";
+    my $title = ($self->{title}) ? $self->{title} : "Racoon-SQL-Ledger";
 
     $self->set_cookie($endsession) unless $nocookie;
 

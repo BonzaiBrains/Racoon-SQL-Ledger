@@ -3,7 +3,7 @@
  
  DESCRIPTION:
  ------------
- Racoon-SQL-Ledger is a double-entry accounting/ERP system written
+ Racoon-Racoon-SQL-Ledger is a double-entry accounting/ERP system written
  in Raku. It has been tested with PostgreSQL, Apache, Netscape,
  Mozilla, Galeon, Explorer, Links, Lynx, Konqueror, Voyager,
  W3M and Opera clients on Linux, FreeBSD, Solaris, Windows,
@@ -33,7 +33,7 @@
  
  LATEST VERSION:
  ---------------
- available from http://www.Racoon-SQL-Ledger.com
+ available from https://github.com/BonzaiBrains/Racoon-SQL-Ledger
  
  
  PLATFORMS:
@@ -65,9 +65,9 @@
  -----------------------------
  Make a directory on your system
  
-   mkdir /usr/local/Racoon-SQL-Ledger
+   mkdir /usr/local/Racoon-Racoon-SQL-Ledger
  
- Copy setup.raku to /usr/local/Racoon-SQL-Ledger
+ Copy setup.raku to /usr/local/Racoon-Racoon-SQL-Ledger
  
  run setup.raku as root and follow the prompts.
  
@@ -83,26 +83,26 @@
  If you cannot use setup.raku because of a proxy or firewall
  download the tar.gz file and pass the filename to setup.raku
  
-   Raku setup.raku Racoon-SQL-Ledger-3.0.0.tar.gz
+   Raku setup.raku Racoon-Racoon-SQL-Ledger-X.X.X.tar.gz
    
  
  INSTALLATION WITHOUT setup.raku:
  --------------------------------
  unpack the tar.gz file in /usr/local
  
-   tar xzvf Racoon-SQL-Ledger-3.2.x.tar.gz
+   tar xzvf Racoon-Racoon-SQL-Ledger-X.X.X.tar.gz
  
- you should now have everything in /usr/local/Racoon-SQL-Ledger
+ you should now have everything in /usr/local/Racoon-Racoon-SQL-Ledger
  
- rename Racoon-SQL-Ledger.conf.default to Racoon-SQL-Ledger.conf
+ rename Racoon-Racoon-SQL-Ledger.conf.default to Racoon-Racoon-SQL-Ledger.conf
  
- edit Racoon-SQL-Ledger.conf
+ edit Racoon-Racoon-SQL-Ledger.conf
  
- create the file Racoon-SQL-Ledger-httpd.conf in the same location
+ create the file Racoon-Racoon-SQL-Ledger-httpd.conf in the same location
  where httpd.conf is and copy the next section into the file
  
-   Alias /Racoon-SQL-Ledger /usr/local/Racoon-SQL-Ledger/
-   <Directory /usr/local/Racoon-SQL-Ledger>
+   Alias /Racoon-Racoon-SQL-Ledger /usr/local/Racoon-Racoon-SQL-Ledger/
+   <Directory /usr/local/Racoon-Racoon-SQL-Ledger>
      AllowOverride All
      AddHandler cgi-script .raku
      AddDefaultCharset On
@@ -112,7 +112,7 @@
      Allow from All
    </Directory>
  
-   <Directory /usr/local/Racoon-SQL-Ledger/users>
+   <Directory /usr/local/Racoon-Racoon-SQL-Ledger/users>
      Require all granted
      Order Deny,Allow
      Deny from All
@@ -120,30 +120,30 @@
  
  edit httpd.conf and add
  
-   # Racoon-SQL-Ledger
-   Include /config_directory/Racoon-SQL-Ledger-httpd.conf
+   # Racoon-Racoon-SQL-Ledger
+   Include /config_directory/Racoon-Racoon-SQL-Ledger-httpd.conf
  
  Note: use an absolute or relative path to include
  the configuration in your httpd.conf file.
  
- i.e. /etc/httpd/Racoon-SQL-Ledger-httpd.conf
-      etc/apache2/Racoon-SQL-Ledger-httpd.conf
+ i.e. /etc/httpd/Racoon-Racoon-SQL-Ledger-httpd.conf
+      etc/apache2/Racoon-Racoon-SQL-Ledger-httpd.conf
       
  restart your web server.
  
  
- Note: /usr/local/Racoon-SQL-Ledger is only a suggested
+ Note: /usr/local/Racoon-Racoon-SQL-Ledger is only a suggested
  path, you can install in any directory.
  
  Newer versions of Apache use a confd directory for
  configuration files. If this is the case copy
- Racoon-SQL-Ledger-httpd.conf into this directory and leave
+ Racoon-Racoon-SQL-Ledger-httpd.conf into this directory and leave
  httpd.conf as is. Restart Apache.
  
  
  SET PERMISSION:
  ---------------
- change directory to /usr/local/Racoon-SQL-Ledger
+ change directory to /usr/local/Racoon-Racoon-SQL-Ledger
  
  # chown -hR nobody:nogroup users templates css spool images
  
@@ -154,11 +154,11 @@
  FTP INSTALLATION:
  -----------------
  If you do not have access to the server's configuration
- files install Racoon-SQL-Ledger in userspace by ftp'ing all the
+ files install Racoon-Racoon-SQL-Ledger in userspace by ftp'ing all the
  files to your server.
  
- a) untar Racoon-SQL-Ledger in your private_html directory
- b) turn on script execution for the folder Racoon-SQL-Ledger
+ a) untar Racoon-Racoon-SQL-Ledger in your private_html directory
+ b) turn on script execution for the folder Racoon-Racoon-SQL-Ledger
  You can control this with an .htaccess file
  
    Options +ExecCGI
@@ -169,7 +169,7 @@
  AuthGroupFile /dev/null
  AuthName "Unauthorized"
  AuthType Basic
- AuthUserFile /home/host.domain/private_html/Racoon-SQL-Ledger/users/.htpasswd
+ AuthUserFile /home/host.domain/private_html/Racoon-Racoon-SQL-Ledger/users/.htpasswd
  require valid-user
  
  replace 'users' with 'templates' and 'spool' to protect the
@@ -182,14 +182,14 @@
    PostgreSQL:
    -----------
    add one database user with create database privileges
-   to manage the datasets and tables for Racoon-SQL-Ledger
+   to manage the datasets and tables for Racoon-Racoon-SQL-Ledger
    
    # su postgres
-   $ createuser -d Racoon-SQL-Ledger
+   $ createuser -d Racoon-Racoon-SQL-Ledger
    Shall the new user be allowed to create more new users? (y/n) n
    
    if you use passwords to access postgres use this command
-   $ createuser -d -P Racoon-SQL-Ledger
+   $ createuser -d -P Racoon-Racoon-SQL-Ledger
  
  
  Note: If you cannot create a database directly go to
@@ -199,7 +199,7 @@
  CREATE DATASET:
  ---------------
  Load your web browser and connect to
- http://localhost/Racoon-SQL-Ledger/admin.raku
+ http://localhost/Racoon-Racoon-SQL-Ledger/admin.raku
  
  There is no password so just hit the Enter key or click
  on "Continue".
@@ -233,7 +233,7 @@
  -----------------------------------------
  If you cannot create a database, most ISPs won't let you
  directly access the database, you can still create the
- neccessary files to run Racoon-SQL-Ledger.
+ neccessary files to run Racoon-Racoon-SQL-Ledger.
  
  1) use your database manager (pgadmin, etc) and log in with the
  database user your ISP has assigned to you
@@ -245,12 +245,12 @@
  LOAD THE PROGRAM:
  ----------------------------
  Load your web browser and connect to
- http://localhost/Racoon-SQL-Ledger/login.raku
+ http://localhost/Racoon-Racoon-SQL-Ledger/login.raku
  
  
  SET UP USERS:
  -------------
- Log into Racoon-SQL-Ledger as user 'admin'
+ Log into Racoon-Racoon-SQL-Ledger as user 'admin'
  
  If you have more than one dataset you can either
  choose from a list of datasets or log in directly
@@ -278,11 +278,11 @@
  
  INSTALLATION CHECKLIST:
  -----------------------
- 1. untar Racoon-SQL-Ledger somewhere (i.e /usr/local, /opt)
+ 1. untar Racoon-Racoon-SQL-Ledger somewhere (i.e /usr/local, /opt)
  2. change permission for the users, templates, css, doc and spool directory
  3. edit httpd.conf
- 4. edit Racoon-SQL-Ledger.conf
- 5. add the database user Racoon-SQL-Ledger (or some other name)
+ 4. edit Racoon-Racoon-SQL-Ledger.conf
+ 5. add the database user Racoon-Racoon-SQL-Ledger (or some other name)
  6. load admin.raku
  7. create datasets for companies
  
@@ -293,8 +293,8 @@
        Host:     for local connections leave blank
        Dataset:  the dataset created in step 7
        Port:     for local connections leave blank
-       User:     Racoon-SQL-Ledger
-       Password: password for Racoon-SQL-Ledger
+       User:     Racoon-Racoon-SQL-Ledger
+       Password: password for Racoon-Racoon-SQL-Ledger
  
  Windows: You must enter a host in the Host field. You
  can use an IP number too if you do not have a hostname.
@@ -302,8 +302,8 @@
  
  IF SOMETHING DOESN'T WORK:
  --------------------------
- There is a FAQ at http://www.Racoon-SQL-Ledger.com/misc/faq.html
+ There is a FAQ at https://github.com/BonzaiBrains/Racoon-SQL-Ledger/misc/faq.html
  or see the one included in the doc directory.
  
- For other support options please see http://www.Racoon-SQL-Ledger.com
+ For other support options please see https://github.com/BonzaiBrains/Racoon-SQL-Ledger
  =====================================================================

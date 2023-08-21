@@ -1,9 +1,9 @@
 ######################################################################
-# SQL-Ledger ERP
+# Racoon-SQL-Ledger ERP
 # Copyright (c) 2006
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.org
+#     Web: http://www.Racoon-SQL-Ledger.org
 #
 #######################################################################
 #
@@ -28,7 +28,7 @@ sub display {
   
   @menuorder = $menu->access_control(\%myconfig);
 
-  $form->{title} = "SQL-Ledger $form->{version}";
+  $form->{title} = "Racoon-SQL-Ledger $form->{version}";
   
   $form->header;
 

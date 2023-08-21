@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -3386,7 +3386,7 @@ sub get_dataset {
   
   unless ($form->{restoredbversion} && $form->{restoredbname}) {
     unlink "$spool/$myconfig{dbname}/$form->{filename}";
-    $form->error($locale->text('Not a SQL-Ledger backup!'));
+    $form->error($locale->text('Not a Racoon-SQL-Ledger backup!'));
   }
   
   if ($myconfig{dbname} ne $form->{restoredbname}) {
@@ -3408,7 +3408,7 @@ $locale->text('will be restored with data from').qq| <b>$form->{restoredbname}</
   if ($form->{dbversion} ne $form->{restoredbversion}) {
     if ($form->{restoredbversion} gt $form->{dbversion}) {
       unlink "$spool/$myconfig{dbname}/$form->{filename}";
-      $form->error($locale->text('Dataset version newer, SQL-Ledger must first be upgraded!'));
+      $form->error($locale->text('Dataset version newer, Racoon-SQL-Ledger must first be upgraded!'));
     }
 
     $dbversion = qq|
@@ -4289,7 +4289,7 @@ sub company_logo {
 
 </pre>
 <center>
-<a href="http://www.sql-ledger.com" target=_blank><img src=$images/sql-ledger.png border=0></a>
+<a href="https://github.com/BonzaiBrains/Racoon-SQL-Ledger" target=_blank><img src=$images/Racoon-SQL-Ledger.png border=0></a>
 <h1 class=login>|.$locale->text('Version').qq| $form->{version}</h1>
 
 <p>

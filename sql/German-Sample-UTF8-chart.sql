@@ -1,7 +1,7 @@
 -- Einfacher Deutscher Kontenrahmen => Very Easy German Default Chart  
 -- Vorbereitet von / Prepared by Paul Tammes May 9th, 2002. Kommentar / Comments : finance@bermuda-holding.com
--- Englische Texte für eigene Zwecke und um Refernz in SQL-Ledger Dokumentation zu erleichtern.
--- English terms used mostly for my own reference and to make lookup in SQL-Ledger documentation easier.
+-- Englische Texte für eigene Zwecke und um Refernz in Racoon-SQL-Ledger Dokumentation zu erleichtern.
+-- English terms used mostly for my own reference and to make lookup in Racoon-SQL-Ledger documentation easier.
 -- GIFI-codes werden benutzt/misbraucht um die art der Rechnung zu deuten, Fehler nicht ausgeschlossen denn 
 -- Ich bin kein Deutscher Steuerberater ;-( 
 -- GIFI field codes re-used for following specs:

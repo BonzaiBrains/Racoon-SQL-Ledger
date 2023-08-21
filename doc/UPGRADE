@@ -16,12 +16,12 @@ do the work for you.
   
 The steps to do it yourself are:
 --------------------------------
-1. ungzip/untar SQL-Ledger over top your old installation
+1. ungzip/untar Racoon-SQL-Ledger over top your old installation
    $ cd /usr/local
-   $ tar zxvf sql-ledger-x.x.x.tar.gz
+   $ tar zxvf Racoon-SQL-Ledger-x.x.x.tar.gz
 
 2. fix permissions
-   # cd sql-ledger
+   # cd Racoon-SQL-Ledger
    # chown -hR nobody:nogroup *
    # chmod 711 templates css images spool
 
@@ -30,11 +30,11 @@ The steps to do it yourself are:
 
 Using setup.pl passing filename:
 --------------------------------
-1. download sql-ledger-x.x.x.tar.gz and save in the sql-ledger folder
+1. download Racoon-SQL-Ledger-x.x.x.tar.gz and save in the Racoon-SQL-Ledger folder
 
 2. change directory to
 
-   $ cd /usr/local/sql-ledger
+   $ cd /usr/local/Racoon-SQL-Ledger
 
 3. become the root user
 
@@ -42,7 +42,7 @@ Using setup.pl passing filename:
 
 4. run setup.pl from the commandline
 
-   # ./setup.pl sql-ledger-x.x.x.tar.gz
+   # ./setup.pl Racoon-SQL-Ledger-x.x.x.tar.gz
    
 
 Upgrading Datasets:
@@ -61,7 +61,7 @@ Version 1.6 to 1.8
 ------------------
 1. copy the following templates to your template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
 
    $ cp Default-email_purchase_order.html your_template_dir/email_purchase_order.html
    $ cp Default-purchase_order.html your_template_dir/purchase_order.html
@@ -76,7 +76,7 @@ Version 1.6 to 1.8
       
 3. Edit your preferences
 
-   In field 'Stylesheet' enter -> sql-ledger.css
+   In field 'Stylesheet' enter -> Racoon-SQL-Ledger.css
    Stylesheet is in the css directory
 
    Add your foreign currencies in the Currencies field
@@ -106,23 +106,23 @@ Version 1.6 to 1.8
 
 Version 1.8.0 to 1.8.3
 ----------------------
-1. copy sql-ledger.conf.default to sql-ledger.conf
+1. copy Racoon-SQL-Ledger.conf.default to Racoon-SQL-Ledger.conf
 
-   $ cp sql-ledger.conf.default sql-ledger.conf
+   $ cp Racoon-SQL-Ledger.conf.default Racoon-SQL-Ledger.conf
 
-   if sql-ledger.conf was modified merge the changes from the
+   if Racoon-SQL-Ledger.conf was modified merge the changes from the
    .default file rather than copying over top.
 
 2. copy the following templates to your personal template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
 
    $ cp Default-invoice.tex your_template_dir/invoice.tex
    $ cp Default-packing_list.tex your_template_dir/packing_list.tex
    $ cp Default-purchase_order.tex your_template_dir/purchase_order.tex
    $ cp Default-sales_order.tex your_template_dir/sales_order.tex
 
-3. edit sql-ledger.conf
+3. edit Racoon-SQL-Ledger.conf
    instructions are in the file
 
 
@@ -140,7 +140,7 @@ Version 1.8.7 to 2.0.0
 ----------------------
 1. copy the following templates to your personal template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
 
    $ cp Default-check.tex your_template_dir/check.tex
    $ cp Default-receipt.tex your_template_dir/receipt.tex
@@ -152,7 +152,7 @@ Version 2.0.9 to 2.2.0
 ----------------------
 1. copy the following template to your personal template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-pos_invoice.txt your_template_dir/pos_invoice.txt
 
@@ -206,20 +206,20 @@ with 'vendor' and 'shipto'.
   * change the template directory back to what it was before
     the change and save the user
   * drop into a shell window
-  * cd to sql-ledger/templates/new
+  * cd to Racoon-SQL-Ledger/templates/new
   * copy the additional templates to your private template directory
 
 4. Printers
 
    printer setup has changed to multiple printers which allow
-   users to choose a printer. Printers can be defined in sql-ledger.conf
+   users to choose a printer. Printers can be defined in Racoon-SQL-Ledger.conf
 
 
 Version 2.4.2 to 2.4.3
 ----------------------
 1. copy the following templates to your private template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
 
    $ cp Default-ar_transaction.html your_template_dir/ar_transaction.html
    $ cp Default-ar_transaction.tex your_template_dir/ar_transaction.tex
@@ -231,7 +231,7 @@ Version 2.4.16 to 2.6.0
 -----------------------
 1. copy the following templates to your private template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-timecard.html your_template_dir/timecard.html
    $ cp Default-timecard.tex your_template_dir/timecard.tex
@@ -241,7 +241,7 @@ Version 2.6.27 to 2.8.0
 -----------------------
 1. copy the following templates to your private template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-credit_invoice.html your_template_dir/credit_invoice.html
    $ cp Default-credit_invoice.tex your_template_dir/credit_invoice.tex
@@ -270,7 +270,7 @@ Version 2.8.2 to 2.8.4
 ----------------------
 1. copy the following templates to your private template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-remittance_voucher.html your_template_dir/remittance_voucher.html
    $ cp Default-remittance_voucher.tex your_template_dir/remittance_voucher.tex
@@ -289,7 +289,7 @@ Version 2.8.23 to 2.8.30
 ------------------------
 1. copy the following templates to your private template directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-reminder1.html your_template_dir/reminder1.html
    $ cp Default-reminder2.html your_template_dir/reminder2.html
@@ -317,7 +317,7 @@ Version 2.8.30 to 3.0
    all the files without the login_ prefix to the directory.
 8. copy the following template to your dataset directory
 
-   $ cd sql-ledger/templates
+   $ cd Racoon-SQL-Ledger/templates
    
    $ cp Default-payslip.tex dataset/payslip.tex
    $ cp Default-barcode.tex dataset/barcode.tex

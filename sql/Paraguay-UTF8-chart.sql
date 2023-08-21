@@ -1,5 +1,5 @@
 --
--- SQL-Ledger Sample COA - Paraguay
+-- Racoon-SQL-Ledger Sample COA - Paraguay
 -- Version: 2.4.6
 -- Submitted by: Mario L. Epp
 -- Date: 2005-01-03

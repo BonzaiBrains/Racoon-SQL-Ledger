@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -1270,7 +1270,7 @@ sub save_memberfile {
 
       $m{dbpasswd} = pack 'u', $myconfig{dbpasswd};
       chop $m{dbpasswd};
-      $m{stylesheet} = 'sql-ledger.css';
+      $m{stylesheet} = 'Racoon-SQL-Ledger.css';
       $m{timeout} = 86400;
 
       if ($form->{employeepassword}) {

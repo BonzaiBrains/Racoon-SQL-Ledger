@@ -9,11 +9,11 @@
 <p><li><h4>perl 5.26 @INC error</h4>
 If you get something like this instead of the login screen
 <p>
-Can't locate bin/mozilla/login.raku in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at /var/www/html/sql-ledger/login.raku line 119.
+Can't locate bin/mozilla/login.raku in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at /var/www/html/Racoon-SQL-Ledger/login.raku line 119.
 <p>
 add the code below at the beginning of am.raku and login.raku if you have
 symlinks to the other files in the root directory, otherwise add
-it to all the scripts in the sql-ledger root directory
+it to all the scripts in the Racoon-SQL-Ledger root directory
 
 <pre>
 BEGIN {
@@ -27,18 +27,18 @@ For some other workarounds see
 <p><li><h4>spool and template directory missing</h4>
 The latest archives, starting with 3.0.7, do not have a spool and/or templates
 directory. Add the directories with web server write privileges in the
-sql-ledger directory before calling up admin.raku
+Racoon-SQL-Ledger directory before calling up admin.raku
 
 <p><li><h4>Apache 2.4 configuration</h4>
 <pre>
 AddHandler cgi-script .raku
 
-Alias /sql-ledger /usr/local/sql-ledger/
-&lt;Directory /usr/local/sql-ledger&gt;
+Alias /Racoon-SQL-Ledger /usr/local/Racoon-SQL-Ledger/
+&lt;Directory /usr/local/Racoon-SQL-Ledger&gt;
   Options ExecCGI Includes FollowSymlinks
 &lt;/Directory&gt;
 
-&lt;Directory /usr/local/sql-ledger/&gt;
+&lt;Directory /usr/local/Racoon-SQL-Ledger/&gt;
   AllowOverride None
   Require all granted
 &lt;/Directory&gt;
@@ -65,20 +65,20 @@ texconfig-sys pdftex paper letter
 <p><li><h4>Install Notes for Lighttpd</h4>
 <ul>
 <li>Make sure mod_cgi and mod_alias are in server.modules list
-<li>Add sql-ledger directory as an alias, ie:
-<p>alias_url = ( "/sql-ledger/" => "/usr/local/sql-ledger/" )
+<li>Add Racoon-SQL-Ledger directory as an alias, ie:
+<p>alias_url = ( "/Racoon-SQL-Ledger/" => "/usr/local/Racoon-SQL-Ledger/" )
 <li>Set up perl as handler for *.raku files.
 <p>cgi.assign = ( ".raku" => "/usr/bin/perl" )
 <p>Note: server.follow-symlink is on by default in lighttpd.
 <li>Deny access to users directory
-<p>$HTTP["url"] =~ "/sql-ledger/users" { url.access-deny = ("") }
+<p>$HTTP["url"] =~ "/Racoon-SQL-Ledger/users" { url.access-deny = ("") }
 </ul>
 
 
 <p><li><h4>PostgreSQL 8.x</h4>
 PostgreSQL added a restriction in v8.x that a sequence cannot be dropped
 after if it is referenced by a table. However backups created with
-SQL-Ledger v2.6.13 and earlier have a DROP SEQUENCE step in the backup
+Racoon-SQL-Ledger v2.6.13 and earlier have a DROP SEQUENCE step in the backup
 which will fail. To fix this edit the backup before restoring on a 8.x
 system.
 
@@ -110,12 +110,12 @@ SELECT SETVAL('jcitemsid', 53);
 template1 is a template to build new databases
 from. Anything you put into template1 will be copied to a new database.
 When you try to create a new dataset, the tables are already created from
-template1 and when SQL-Ledger tries to create them you'll get an error that
+template1 and when Racoon-SQL-Ledger tries to create them you'll get an error that
 the tables already exist.
 
 
-<p><li><h4>PostgreSQL 8.0+ and SQL-Ledger v2.6.3 and older</h4>
-To use SQL-Ledger < v2.6.3 with 8.0+ you have to modify the Pg-tables.sql file.
+<p><li><h4>PostgreSQL 8.0+ and Racoon-SQL-Ledger v2.6.3 and older</h4>
+To use Racoon-SQL-Ledger < v2.6.3 with 8.0+ you have to modify the Pg-tables.sql file.
 The file is in the sql directory.
 
 <pre>
@@ -153,7 +153,7 @@ CREATE TABLE assembly (
 ) WITH OIDS;
 </pre>
 
-This change is only required for SQL-Ledger versions 2.6.4 and older!
+This change is only required for Racoon-SQL-Ledger versions 2.6.4 and older!
 
 <p>If you already built a dataset without this change you will get
 an error when you try to save a PO or assembly.
@@ -267,35 +267,35 @@ read the interactive documentation for procedural languages.
 </ul>
 
 
-<p><li><h4>The requested URL /sql-ledger/admin.raku was not found</h4>
+<p><li><h4>The requested URL /Racoon-SQL-Ledger/admin.raku was not found</h4>
 Your webserver doesn't know where to find the script. Most commonly this
 is from distributions hiding webserver configuration files in different
 locations or files and setup.raku wasn't able to configure the location for
 you. Find out which file (httpd.conf, httpdcommon.conf, ...)
 controls your webserver configuration and add
 <pre>
-  # SQL-Ledger
-  Include /etc/httpd/sql-ledger-httpd.conf</pre>
+  # Racoon-SQL-Ledger
+  Include /etc/httpd/Racoon-SQL-Ledger-httpd.conf</pre>
 
-Create a file 'sql-ledger-httpd.conf' in /etc/httpd and copy the next part
+Create a file 'Racoon-SQL-Ledger-httpd.conf' in /etc/httpd and copy the next part
 into the file.
 
 <pre>
   AddHandler cgi-script .raku
   AddDefaultCharset On
-  Alias /sql-ledger /var/www/sql-ledger/
-  &lt;Directory /var/www/sql-ledger&gt;
+  Alias /Racoon-SQL-Ledger /var/www/Racoon-SQL-Ledger/
+  &lt;Directory /var/www/Racoon-SQL-Ledger&gt;
     Options ExecCGI Includes FollowSymlinks
   &lt;/Directory&gt;
 
-  &lt;Directory /var/www/sql-ledger/users&gt;
+  &lt;Directory /var/www/Racoon-SQL-Ledger/users&gt;
     Order Deny,Allow
     Deny from All
   &lt;/Directory&gt;</pre>
 replace '/etc/httpd' and '/var/www' with the appropriate directories.
 
 <p>If you run Apache and configuration files are in a conf.d directory
-you don't need to change httpd.conf but simply copy sql-ledger-httpd.conf
+you don't need to change httpd.conf but simply copy Racoon-SQL-Ledger-httpd.conf
 into /etc/apache/conf.d and restart apache.
 
 
@@ -330,7 +330,7 @@ SL/Form.pm and change the number (44) on line 84.
   }</pre>
 
 
-<p><li><h4>IDENT Authentication failed for user "sql-ledger"</h4>
+<p><li><h4>IDENT Authentication failed for user "Racoon-SQL-Ledger"</h4>
 Edit pg_hba.conf and change authentication to
 
 <pre>
@@ -385,15 +385,15 @@ Unfortunately with all that power there is also a steep learning curve.
 <p><li><h4>W3M</h4>
 pass terminal=mozilla when you start w3m
 <pre>
-  $ w3m -F http://localhost/sql-ledger/login.raku?terminal=mozilla</pre>
+  $ w3m -F http://localhost/Racoon-SQL-Ledger/login.raku?terminal=mozilla</pre>
 
 To use without frames
 <pre>
-  $ w3m http://localhost/sql-ledger/login.raku?terminal=lynx</pre>
+  $ w3m http://localhost/Racoon-SQL-Ledger/login.raku?terminal=lynx</pre>
 
 <p><li><h4>PDF option disappeared</h4>
-Edit sql-ledger.conf and set $latex = 1;
-<br>sql-ledger.conf is perl code. If there is a mistake in the file it
+Edit Racoon-SQL-Ledger.conf and set $latex = 1;
+<br>Racoon-SQL-Ledger.conf is perl code. If there is a mistake in the file it
 will not be loaded and
 the internal defaults are used which turn off $latex, hence no PDF option.
 
@@ -404,15 +404,15 @@ the internal defaults are used which turn off $latex, hence no PDF option.
 <a href=http://techdocs.postgresql.org/guides/InstallingOnWindows>Postgres</a>
 or Oracle, DBI and the appropriate DBD
 module
-<li>download the latest version of <a href=/cgi-bin/nav.raku?page=source/index.html&title=Download>SQL-Ledger</a>
-<li>extract the files to c:\apache\sql-ledger
+<li>download the latest version of <a href=/cgi-bin/nav.raku?page=source/index.html&title=Download>Racoon-SQL-Ledger</a>
+<li>extract the files to c:\apache\Racoon-SQL-Ledger
 <li>run 'perl shebang' to change the first line of the scripts. If perl
 is not in c:\perl\bin' change '#!c:\\perl\\bin\\perl' to the location where
 your perl binary is.
 <li>edit c:\apache\conf\httpd.conf and add
 <pre>
-Alias /sql-ledger "c:/apache/sql-ledger/"
-&lt;Directory "c:/apache/sql-ledger"&gt;
+Alias /Racoon-SQL-Ledger "c:/apache/Racoon-SQL-Ledger/"
+&lt;Directory "c:/apache/Racoon-SQL-Ledger"&gt;
   AllowOverride All
   AddHandler cgi-script .raku
   AddDefaultCharset On
@@ -421,7 +421,7 @@ Alias /sql-ledger "c:/apache/sql-ledger/"
   Allow from All
 &lt;/Directory&gt;
 
-&lt;Directory "c:/apache/sql-ledger/users"&gt;
+&lt;Directory "c:/apache/Racoon-SQL-Ledger/users"&gt;
   Order Deny,Allow
   Deny from All
 &lt;/Directory&gt;
@@ -429,9 +429,9 @@ Alias /sql-ledger "c:/apache/sql-ledger/"
 
 <li>start Apache
 <li>start Postgres|Oracle|DB2
-<li>connect to http://localhost/sql-ledger/admin.raku and set up
+<li>connect to http://localhost/Racoon-SQL-Ledger/admin.raku and set up
 datasets
-<li>connect to http://localhost/sql-ledger/login.raku and login
+<li>connect to http://localhost/Racoon-SQL-Ledger/login.raku and login
 
 </ul>
 
@@ -455,22 +455,22 @@ Apache, perl, postgres, gcc and lynx
 <pre>
 AddHandler cgi-script .raku
 AddDefaultCharset On
-Alias /sql-ledger /var/www/sql-ledger/
-&lt;Directory /var/www/sql-ledger&gt;
+Alias /Racoon-SQL-Ledger /var/www/Racoon-SQL-Ledger/
+&lt;Directory /var/www/Racoon-SQL-Ledger&gt;
   Options +ExecCGI
 &lt;/Directory&gt;
 
-&lt;Directory /var/www/sql-ledger/users&gt;
+&lt;Directory /var/www/Racoon-SQL-Ledger/users&gt;
   Order Deny,Allow
   Deny from All
 &lt/Directory&gt;
 </pre>
-<li>install SQL-Ledger
+<li>install Racoon-SQL-Ledger
 <li>cd /var/www
-<li>mkdir sql-ledger
+<li>mkdir Racoon-SQL-Ledger
 <li>download <a href=/cgi-bin/download.raku?setup.raku>setup.raku</a> and save the file
-in /var/www/sql-ledger
-<li>cd /var/www/sql-ledger
+in /var/www/Racoon-SQL-Ledger
+<li>cd /var/www/Racoon-SQL-Ledger
 <li>perl setup.raku
 </ul>
 
@@ -571,7 +571,7 @@ assembly you simply return the parts to inventory by entering a negative
 quantity for the number of assemblies to stock.
 
 
-<p><li><h4>customizing SQL-Ledger</h4>
+<p><li><h4>customizing Racoon-SQL-Ledger</h4>
 The <a href=/cgi-bin/nav.raku?page=feature/api.html&title=Application%20Interface>application interface</a>
 consists of a global and private interface.
 
@@ -618,7 +618,7 @@ in your httpd.conf file.
 the frontend script couldn't figure out which browser you are using
 <p>include the terminal variable on the URL
 <pre>
-  http://localhost/sql-ledger/login.raku?terminal=lynx</pre>
+  http://localhost/Racoon-SQL-Ledger/login.raku?terminal=lynx</pre>
 Valid terminal variables are lynx and mozilla
 
 
@@ -654,7 +654,7 @@ access tables owned by joe.
 
 Enable Includes and FollowSymlinks Options in your httpd.conf file
 <pre>
-  &lt;Directory /usr/local/sql-ledger&gt;
+  &lt;Directory /usr/local/Racoon-SQL-Ledger&gt;
     Options ExecCGI Includes FollowSymlinks
   &lt;/Directory&gt;
 </pre>
@@ -680,7 +680,7 @@ the individual files.
 
 <p><li><h4>switch to a foreign language for the login and admin screen</h4>
 
-Edit sql-ledger.conf and enter the code for the $language variable
+Edit Racoon-SQL-Ledger.conf and enter the code for the $language variable
 <pre>
   $language = "de";</pre>
 
@@ -692,10 +692,10 @@ can be changed by setting the language in your Preferences.
 
 <p>
 <hr>
-<h1>SQL-Ledger security</h1>
+<h1>Racoon-SQL-Ledger security</h1>
 
 <ul>
-<li>The security features built into SQL-Ledger provide passwords,
+<li>The security features built into Racoon-SQL-Ledger provide passwords,
 two step authentication and access control.
 If you expose your server on the Internet we strongly advise to use your
 web server's authentication mechanism as well.
@@ -708,22 +708,22 @@ SQL database server.
   Typical setups:
   
   /usr/local/vh/www                   <- DocumentRoot for virtual host
-  /usr/local/vh/sql-ledger            <- Alias for sql-ledger
+  /usr/local/vh/Racoon-SQL-Ledger            <- Alias for Racoon-SQL-Ledger
   /usr/local/vh/users                 <- users directory out of reach
 
 <hr width=60% align=left>
   /usr/local/vh/www                   <- DocumentRoot for virtual host
-  /usr/local/vh/www/sql-ledger        <- Alias for sql-ledger
-  /usr/local/vh/www/sql-ledger/users  <- users configuration files and tmp space
+  /usr/local/vh/www/Racoon-SQL-Ledger        <- Alias for Racoon-SQL-Ledger
+  /usr/local/vh/www/Racoon-SQL-Ledger/users  <- users configuration files and tmp space
 
-  &lt;Directory /usr/local/vh/www/sql-ledger/users&gt;  <- disable webserver access
+  &lt;Directory /usr/local/vh/www/Racoon-SQL-Ledger/users&gt;  <- disable webserver access
     Order Deny,Allow                                 for users directory
     Deny from All
   &lt;/Directory&gt;
 
 </pre>
 
-The location for the users directory can be specified in sql-ledger.conf
+The location for the users directory can be specified in Racoon-SQL-Ledger.conf
 
 <p><li>Set permission for the users and templates directory to 711
 

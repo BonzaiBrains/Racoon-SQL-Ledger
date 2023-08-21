@@ -1,39 +1,39 @@
 -- Einfacher Deutscher Kontenrahmen => Very Easy German Default Chart  
 -- Vorbereitet von / Prepared by Paul Tammes May 9th, 2002. Kommentar / Comments : finance@bermuda-holding.com
--- Englische Texte für eigene Zwecke und um Refernz in SQL-Ledger Dokumentation zu erleichtern.
--- English terms used mostly for my own reference and to make lookup in SQL-Ledger documentation easier.
+-- Englische Texte fï¿½r eigene Zwecke und um Refernz iRacoon-SQL-Ledgerer Dokumentation zu erleichtern.
+-- English terms used mostly for my own reference and to make lookup in Racoon-SQL-Ledger documentation easier.
 -- GIFI-codes werden benutzt/misbraucht um die art der Rechnung zu deuten, Fehler nicht ausgeschlossen denn 
 -- Ich bin kein Deutscher Steuerberater ;-( 
 -- GIFI field codes re-used for following specs:
 -- Link: Achtung, sehr wenig benutzt da mir die Kentnisse zum Deutschen System fehlen. Sehr gut aufpassen und wenn
 -- Ihr Fehler oder Praktische TIPS hat: gerne!
 -- Link: used to a minimum, update and customization may well be needed!
--- A0 	= Anlagevermögen 		/ Fixed Assets
+-- A0 	= Anlagevermï¿½gen 		/ Fixed Assets
 -- A1-1 = Warenbestand			/ Inventory
 -- A1-2 = Forderungen			/ Liabilities
 -- A1-3 = Liquide Mittel		/ Assets
 -- A1-4	= Aktive Rechnungsabgrenzung 	/ Closing Account results 
--- E    = Erträge			/ Income 
+-- E    = Ertrï¿½ge			/ Income 
 -- K0	= Wareneinsatz			/ COGS
 -- K1   = Personalkosten		/ Salaries etc
 -- K2   = Raumkosten			/ Rental etc
 -- K3   = Sonstige Kosten		/ Various costs
 -- NA 	= Neutrale Aufwendungen		/ Neutral Costs 
--- NE	- Neutrale Erlöse		/ Neutral Income
+-- NE	- Neutrale Erlï¿½se		/ Neutral Income
 -- P0 	= Eigenkapital			/ Equity
--- P1 	= Rückstellungen		/ Reserves
+-- P1 	= Rï¿½ckstellungen		/ Reserves
 -- P2 	= Fremdkapital Langfristig	/ Liabilities Long Term
 -- P3 	= Fremdkapital Kurzfristig	/ Liabilities Short Term
 -- P4	= Passive Rechnungsabgrenzung	/ Closing Account results 
 --
 -- A0
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0000','ANLAGEVERMÖGEN','H','A0','A','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0000','ANLAGEVERMï¿½GEN','H','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0100','Konzessionen & Lizenzen','A','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0135','EDV-Programme','A','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0440','Maschinen','A','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0500','Betriebsausstattung','A','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0520','PKW','A','A0','A','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0650','Büroeinrichtung','A','A0','A','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0650','Bï¿½roeinrichtung','A','A0','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('0670','GWG','A','A0','A','');
 -- A1-1
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1100','WARENBESTAND','H','A1-1','A','');
@@ -50,7 +50,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1405','Anrechenbare Vorsteuer 16%','A','A1-2','A','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1406','Anrechenbare Vorsteuer 15%','A','A1-2','A','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1433','bezahlte Einfuhrumsatzsteuer','A','A1-2','A','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1370','Ungeklärte Posten','A','A1-2','A','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1370','Ungeklï¿½rte Posten','A','A1-2','A','');
 -- A1-3
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1600','LIQUIDE MITTEL','H','A1-3','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1601','Kasse','A','A1-3','A','');
@@ -73,10 +73,10 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('2970','Gewinnvortrag vor Verwendung','A','P0','Q','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('2978','Verlustvortrag vor Verwendung','A','P0','Q','');
 -- P1
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3000','RÜCKSTELLUNGEN','H','P1','L','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3030','Gewerbesteuerrückstellung','A','P1','L','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3070','Sonstige Rückstellungen','A','P1','L','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3095','Rückstellung für Abschlusskosten','A','P1','L','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3000','Rï¿½CKSTELLUNGEN','H','P1','L','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3030','Gewerbesteuerrï¿½ckstellung','A','P1','L','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3070','Sonstige Rï¿½ckstellungen','A','P1','L','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3095','Rï¿½ckstellung fï¿½r Abschlusskosten','A','P1','L','');
 -- P2
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3100','FREMDKAPITAL LANGFRISTIG','H','P2','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3160','Bankdarlehen','A','P2','L','');
@@ -87,7 +87,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3500','Sonstige Verbindlichkeiten','A','P3','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3560','Darlehen','A','P3','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3700','Verbindl. Betr.steuern u.Abgaben','A','P3','L','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3720','Verbindlichkeiten Löhne und Gehälter','A','P3','L','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3720','Verbindlichkeiten Lï¿½hne und Gehï¿½lter','A','P3','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3730','Verbindlichkeiten Lohnsteuer','A','P3','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3740','Verbindlichkeiten Sozialversicherung','A','P3','L','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3800','Umsatzsteuer','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
@@ -96,8 +96,8 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3803','Umsatzsteuer ig. Erwerb 16%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3805','Umsatzsteuer 16%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3806','Umsatzsteuer 15%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3815','Umsatzsteuer nicht fällig 16%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3816','Umsatzsteuer nicht fällig 15%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3815','Umsatzsteuer nicht fï¿½llig 16%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3816','Umsatzsteuer nicht fï¿½llig 15%','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3820','Umsatzsteuer-Vorauszahlungen','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('3841','Umsatzsteuer Vorjahr','A','P3','L','AR_tax:AP_tax:IC_taxpart:IC_taxservice');
 -- P4
@@ -116,12 +116,12 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 -- K1
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6000','PERSONALKOSTEN','H','K1','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6001','Personalkosten','H','K1','E','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6010','Löhne','A','K1','E','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6020','Gehälter','A','K1','E','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6030','Aushilfslöhne','A','K1','E','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6010','Lï¿½hne','A','K1','E','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6020','Gehï¿½lter','A','K1','E','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6030','Aushilfslï¿½hne','A','K1','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6040','Lohnsteuer Aushilfen','A','K1','E','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6080','Vermögenswirksame Leistungen','A','K1','E','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6090','Fahrtkostenerst.Whg./Arbeitsstätte','A','K1','E','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6080','Vermï¿½genswirksame Leistungen','A','K1','E','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6090','Fahrtkostenerst.Whg./Arbeitsstï¿½tte','A','K1','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6110','Sozialversicherung','A','K1','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6120','Berufsgenossenschaft','A','K1','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6130','Freiw. Soz. Aufw. LSt- u. Soz.Vers.frei','A','K1','E','');
@@ -132,7 +132,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6320','Heizung','A','K2','E','AP_amount:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6325','Gas Strom Wasser','A','K2','E','AP_amount:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6330','Reinigung','A','K2','E','AP_amount:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6335','Instandhaltung betriebliche Räume','A','K2','E','AP_amount:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6335','Instandhaltung betriebliche Rï¿½ume','A','K2','E','AP_amount:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6345','Sonstige Raumkosten','A','K2','E','AP_amount:IC_expense');
 -- K3
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6400','SONSTIGE KOSTEN','H','K3','E','');
@@ -141,7 +141,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6404','Sofortabschreibung GWG','A','K3','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6405','Sonstige Kosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6410','Versicherung','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6420','Beiträge und Gebühren','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6420','Beitrï¿½ge und Gebï¿½hren','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6430','Sonstige Abgaben','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6470','Rep. und Instandhaltung BGA','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6520','Kfz-Versicherung','A','K3','E','AP_amount:IC_cogs:IC_expense');
@@ -151,8 +151,8 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6570','Sonstige Kfz-Kosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6600','Werbung','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6610','Kundengeschenke bis DM 75.','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6620','Kundengeschenke über DM 75.-','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6630','Repräsentationkosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6620','Kundengeschenke ï¿½ber DM 75.-','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6630','Reprï¿½sentationkosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6640','Bewirtungskosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6644','Nicht abzugsf.Bewirtungskosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6650','Reisekosten Arbeitnehmer','A','K3','E','AP_amount:IC_cogs:IC_expense');
@@ -168,43 +168,43 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6780','Fremdarbeiten','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6800','Porto','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6805','Telefon','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6815','Bürobedarf','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6820','Zeitschriften & Bücher','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6815','Bï¿½robedarf','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6820','Zeitschriften & Bï¿½cher','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6825','Rechts- und Beratungskosten','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6835','Mieten für Einrichtungen','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6835','Mieten fï¿½r Einrichtungen','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6840','Mietleasing','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6845','Werkzeuge und Kleingeräte','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6845','Werkzeuge und Kleingerï¿½te','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6850','Betriebsbedarf','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6852','Gastättenbedarf','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6852','Gastï¿½ttenbedarf','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6855','Nebenkosten des Geldverkehrs','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6880','Aufwendungen aus Kursdifferenzen','A','K3','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6885','Erlöse aus Anlageverk.(Buchverlust)','A','K3','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6885','Erlï¿½se aus Anlageverk.(Buchverlust)','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7610','Gewerbesteuer','A','K3','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7685','Kfz-Steuer','A','K3','E','AP_amount:IC_cogs:IC_expense');
 -- E
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8100','ERTRÄGE','H','E','I','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8120','Steuerfreie Umsätze 4 Nr. 1a UStG.','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8100','ERTRï¿½GE','H','E','I','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8120','Steuerfreie Umsï¿½tze 4 Nr. 1a UStG.','A','E','I','AR_amount:IC_sale:IC_income');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8125','Steuerfreie ig. Lieferungen 1b UStG.','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8200','Erlöse ohne Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8300','Erlöse 7% Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8400','Erlöse 15% Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8500','Provisionserlöse','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8200','Erlï¿½se ohne Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8300','Erlï¿½se 7% Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8400','Erlï¿½se 15% Umsatzsteuer','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8500','Provisionserlï¿½se','A','E','I','AR_amount:IC_sale:IC_income');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8630','Entnahme sonstg. Leistungen 7% USt.','A','E','I','AR_amount:IC_sale:IC_income');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8640','Entnahme sonstg. Leistungen 15% USt.','A','E','I','AR_amount:IC_sale:IC_income');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8731','Gew. Skonti 7% USt.','A','E','I','AR_amount:IC_sale:IC_income');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8736','Gew. Skonti 15% USt.','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8840','Erträge aus Kursdifferenzen','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8845','Erlöse aus Anlageverk. (Buchgewinn)','A','E','I','AR_amount:IC_sale:IC_income');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8900','Erträge aus Abgang von Anlageverm.','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8840','Ertrï¿½ge aus Kursdifferenzen','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8845','Erlï¿½se aus Anlageverk. (Buchgewinn)','A','E','I','AR_amount:IC_sale:IC_income');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8900','Ertrï¿½ge aus Abgang von Anlageverm.','A','E','I','AR_amount:IC_sale:IC_income');
 -- NA
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9300','NEUTRALE AUFWENDUNGEN','H','NA','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9310','Zinsen kurzfr. Verbindlichkeiten','A','NA','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9320','Zinsen langfr. Verbindlichkeiten','A','NA','E','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9500','Ausserordentl.Aufwendungen','A','NA','E','');
 -- NE
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9600','NEUTRALE ERTRÄGE','H','NE','I','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9600','NEUTRALE ERTRï¿½GE','H','NE','I','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9610','Guthabenzinsen','H','NE','I','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9700','Ausserordentl.Erträge','H','NE','I','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('9700','Ausserordentl.Ertrï¿½ge','H','NE','I','');
 --
 -- Default settings
 --

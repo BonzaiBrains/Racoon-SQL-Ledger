@@ -75,7 +75,7 @@ foreach $dir (sort @localedir) {
       }
 
       if ($a eq 'y') {
-	eval { require "../../sql-ledger.conf"; };
+	eval { require "../../Racoon-SQL-Ledger.conf"; };
 	if ($@) {
 	  $sendmail = "| sendmail -t";
 	}
@@ -86,8 +86,8 @@ foreach $dir (sort @localedir) {
 	$mail = new Mailer;
 	
 	$mail->{to} = "$email";
-	$mail->{from} = "dsimader\@sql-ledger.com";
-	$mail->{subject} = "$language Translation for SQL-Ledger $version";
+	$mail->{from} = "dsimader\@Racoon-SQL-Ledger.com";
+	$mail->{subject} = "$language Translation for Racoon-SQL-Ledger $version";
 	
 	$mail->{message} = qq|
 Hi $name,

@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 
@@ -30,7 +30,7 @@ sub getpassword {
   $pwt = $locale->text('Password');
   
   if ($form->{stylesheet} && (-f "css/$form->{stylesheet}")) {
-    $stylesheet = qq|<LINK REL="stylesheet" HREF="css/$form->{stylesheet}" TYPE="text/css" TITLE="SQL-Ledger stylesheet">
+    $stylesheet = qq|<LINK REL="stylesheet" HREF="css/$form->{stylesheet}" TYPE="text/css" TITLE="Racoon-SQL-Ledger stylesheet">
 |;
   }
 

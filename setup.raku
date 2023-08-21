@@ -1,10 +1,10 @@
 #!/usr/bin/raku
 #
 ######################################################################
-# SQL-Ledger ERP Installer
+# Racoon-SQL-Ledger ERP Installer
 # Copyright (c) 2007, DWS Systems Inc.
 #
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #######################################################################
 
@@ -26,12 +26,12 @@ $latex = `latex -version`;
 %checkversion = ( www => 1, abacus => 2 );
 
 %source = (
-	    1 => { url => "http://www.sql-ledger.com/source", site => "www.sql-ledger.com", locale => us },
+	    1 => { url => "https://github.com/BonzaiBrains/Racoon-SQL-Ledger/source", site => "www.Racoon-SQL-Ledger.com", locale => us },
 	  );
 
 $userspath = "users";         # default for new installation
 
-eval { require "sql-ledger.conf"; };
+eval { require "Racoon-SQL-Ledger.conf"; };
 
 $filename = shift;
 chomp $filename;
@@ -49,10 +49,10 @@ perl $0 <filename>\n";
 
 if ($filename) {
   # extract version
-  die "Not a SQL-Ledger archive\n" if ($filename !~ /^sql-ledger/);
+  die "Not a Racoon-SQL-Ledger archive\n" if ($filename !~ /^Racoon-SQL-Ledger/);
   
   $version = $filename;
-  $version =~ s/sql-ledger-(\d+\.\d+\.\d+).*$/$1/;
+  $version =~ s/Racoon-SQL-Ledger-(\d+\.\d+\.\d+).*$/$1/;
 
 }
   
@@ -66,7 +66,7 @@ if (-f "VERSION") {
 
   $newinstall = !$version;
 
-  if (! -f "sql-ledger.conf") {
+  if (! -f "Racoon-SQL-Ledger.conf") {
     $newinstall = 1;
   }
 }
@@ -123,7 +123,7 @@ $install .= "\n(d)ownload $latest_version (no installation)" unless $filename;
   print qq|
 
 
-               SQL-Ledger ERP Installation
+               Racoon-SQL-Ledger ERP Installation
 
 
 
@@ -280,7 +280,7 @@ sub get_source_code {
   if ($latest_version) {
     # download it
     chomp $latest_version;
-    $latest_version = "sql-ledger-${latest_version}.tar.gz";
+    $latest_version = "Racoon-SQL-Ledger-${latest_version}.tar.gz";
 
     print "\nStatus\n";
     print "Downloading $latest_version .... ";
@@ -339,13 +339,13 @@ sub install {
   &decompress;
 
   if ($newinstall) {
-    open(FH, "sql-ledger.conf.default");
+    open(FH, "Racoon-SQL-Ledger.conf.default");
     @f = <FH>;
     close(FH);
     unless ($latex) {
       grep { s/^\$latex.*/\$latex = 0;/ } @f;
     }
-    open(FH, ">sql-ledger.conf");
+    open(FH, ">Racoon-SQL-Ledger.conf");
     print FH @f;
     close(FH);
 
@@ -359,7 +359,7 @@ sub install {
       $httpddir = $confd;
     }
     chomp $httpddir;
-    $filename = "sql-ledger-httpd.conf";
+    $filename = "Racoon-SQL-Ledger-httpd.conf";
 
     # do we have write permission?
     if (!open(FH, ">>$httpddir/$filename")) {
@@ -403,7 +403,7 @@ Copy $filename to $httpddir and create a symlink in /etc/sites-available
 
       if (!$confd) {
 	print qq| and add
-# SQL-Ledger
+# Racoon-SQL-Ledger
 Include $httpddir/$filename
 
 to $httpd
@@ -432,11 +432,11 @@ Webserver directives were written to
 |;
      
       if (!$confd) {
-	if (!(`grep "^# SQL-Ledger" $httpd`)) {
+	if (!(`grep "^# Racoon-SQL-Ledger" $httpd`)) {
 
 	  print qq|Please add
 
-# SQL-Ledger
+# Racoon-SQL-Ledger
 Include $httpddir/$filename
 
 to your httpd configuration file and restart the web server.
@@ -452,18 +452,18 @@ to your httpd configuration file and restart the web server.
     if ($permset = ($) =~ getgrnam $webgroup)) {
       `chown -hR :$webgroup users templates css images spool`;
       chmod 0771, 'users', 'templates', 'css', 'images', 'spool';
-      `chown :$webgroup sql-ledger.conf`;
+      `chown :$webgroup Racoon-SQL-Ledger.conf`;
     }
   } else {
     # root
     `chown -hR 0:0 *`;
     `chown -hR $webowner:$webgroup users templates css images spool`;
     chmod 0771, 'users', 'templates', 'css', 'images', 'spool';
-    `chown $webowner:$webgroup sql-ledger.conf`;
+    `chown $webowner:$webgroup Racoon-SQL-Ledger.conf`;
   }
   
-  chmod 0644, 'sql-ledger.conf';
-  unlink "sql-ledger.conf.default";
+  chmod 0644, 'Racoon-SQL-Ledger.conf';
+  unlink "Racoon-SQL-Ledger.conf.default";
 
   &cleanup;
 
@@ -510,8 +510,8 @@ sub decompress {
     &remove_lockfile;
     exit;
   } else {
-    # now we have a copy in sql-ledger
-    if (system("tar -cf $latest_version -C sql-ledger .")) {
+    # now we have a copy in Racoon-SQL-Ledger
+    if (system("tar -cf $latest_version -C Racoon-SQL-Ledger .")) {
       print "Error: Could not create archive for $latest_version\n";
       &remove_lockfile;
       exit;
@@ -523,7 +523,7 @@ sub decompress {
       } else {
         print "done\n";
         print "cleaning up ... ";
-        `rm -rf sql-ledger`;
+        `rm -rf Racoon-SQL-Ledger`;
         print "done\n";
       }
     }

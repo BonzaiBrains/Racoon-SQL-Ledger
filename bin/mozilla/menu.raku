@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -77,7 +77,7 @@ document.onselectstart = new Function("return false");
 
 <body class=menu />
 
-<img src=$images/sql-ledger.gif width=80 border=0>
+<img src=$images/Racoon-SQL-Ledger.gif width=80 border=0>
 
 <br>$myconfig{name}
 |;

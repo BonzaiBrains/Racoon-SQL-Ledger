@@ -1,10 +1,10 @@
 #=====================================================================
-# SQL-Ledger Accounting
+# Racoon-SQL-Ledger Accounting
 # Copyright (C) 2002
 #
 #  Author: Dieter Simader
-#   Email: dsimader@sql-ledger.org
-#     Web: http://www.sql-ledger.org
+#   Email: dsimader@Racoon-SQL-Ledger.org
+#     Web: http://www.Racoon-SQL-Ledger.org
 #
 #  Contributors:
 #
@@ -36,17 +36,17 @@ sub init {
                     2 => 'zwei',
 	            3 => 'drei',
 		    4 => 'vier',
-		    5 => 'fünf',
+		    5 => 'fï¿½nf',
 		    6 => 'sechs',
 		    7 => 'sieben',
 		    8 => 'acht',
 		    9 => 'neun',
 		   10 => 'zehn',
 		   11 => 'elf',
-		   12 => 'zwölf',
+		   12 => 'zwï¿½lf',
 		   13 => 'dreizehn',
 		   14 => 'vierzehn',
-		   15 => 'fünfzehn',
+		   15 => 'fï¿½nfzehn',
 		   16 => 'sechzehn',
 		   17 => 'siebzehn',
 		   18 => 'achtzehn',
@@ -54,7 +54,7 @@ sub init {
 		   20 => 'zwanzig',
 		   30 => 'dreissig',
 		   40 => 'vierzig',
-		   50 => 'fünfzig',
+		   50 => 'fï¿½nfzig',
 		   60 => 'sechzig',
 		   70 => 'siebzig',
 		   80 => 'achtzig',

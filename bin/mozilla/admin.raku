@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
@@ -25,7 +25,7 @@ $form->{charset} = $charset;
 eval { require DBI; };
 $form->error($locale->text('DBI not installed!')) if ($@);
 
-$form->{stylesheet} = "sql-ledger.css";
+$form->{stylesheet} = "Racoon-SQL-Ledger.css";
 $form->{favicon} = "favicon.ico";
 $form->{timeout} = 86400;
 $form->{"root login"} = 1;
@@ -65,7 +65,7 @@ if ($form->{action}) {
 
 sub adminlogin {
 
-  $form->{title} = qq|SQL-Ledger |.$locale->text('Version').qq| $form->{version} |.$locale->text('Administration');
+  $form->{title} = qq|Racoon-SQL-Ledger |.$locale->text('Version').qq| $form->{version} |.$locale->text('Administration');
   
   $form->header;
   
@@ -82,7 +82,7 @@ function sf(){
 
 <div align=center>
 
-<a href="http://www.sql-ledger.com"><img src=$images/sql-ledger.gif border=0 target=_blank></a>
+<a href="https://github.com/BonzaiBrains/Racoon-SQL-Ledger"><img src=$images/Racoon-SQL-Ledger.gif border=0 target=_blank></a>
 <h1 class=login>|.$locale->text('Version').qq| $form->{version}<p>|.$locale->text('Administration').qq|</h1>
 
 <form method=post name=main action="$form->{script}">
@@ -99,7 +99,7 @@ function sf(){
 
 </form>
 
-<a href=http://www.sql-ledger.com target=_blank>SQL-Ledger |.$locale->text('website').qq|</a>
+<a href=https://github.com/BonzaiBrains/Racoon-SQL-Ledger target=_blank>Racoon-SQL-Ledger |.$locale->text('website').qq|</a>
 
 </div>
 
@@ -166,7 +166,7 @@ sub logout {
 
 sub edit {
 
-  $form->{title} = "SQL-Ledger ".$locale->text('Administration');
+  $form->{title} = "Racoon-SQL-Ledger ".$locale->text('Administration');
 
   if (-f "$userspath/$form->{dbname}.LCK") {
     open(FH, "$userspath/$form->{dbname}.LCK") or $form->error("$userspath/$form->{dbname}.LCK : $!");
@@ -268,7 +268,7 @@ sub list_datasets {
                <input name=dbdriver type=radio class=radio value="$_" $dbdriver{$_}>|.$locale->text($_).qq|&nbsp;|;
   }
 
-  $form->{title} = "SQL-Ledger ".$locale->text('Administration');
+  $form->{title} = "Racoon-SQL-Ledger ".$locale->text('Administration');
 
 
   $form->header;
@@ -677,7 +677,7 @@ sub do_change_password {
     seek(FH, 0, 0);
     truncate(FH, 0);
 
-    print FH qq|# SQL-Ledger members
+    print FH qq|# Racoon-SQL-Ledger members
 
 [root login]\n|;
 
@@ -714,7 +714,7 @@ sub do_change_password {
     
     if (! -f $memberfile) {
       open(FH, ">$memberfile") or $form->error("$memberfile : $!");
-      print FH qq|# SQL-Ledger members
+      print FH qq|# Racoon-SQL-Ledger members
 
 [root login]
 |;
@@ -822,7 +822,7 @@ sub do_change_host {
   seek(FH, 0, 0);
   truncate(FH, 0);
 
-  print FH qq|# SQL-Ledger members
+  print FH qq|# Racoon-SQL-Ledger members
 
 [root login]\n|;
 
@@ -955,7 +955,7 @@ sub dbdriver_defaults {
 
   # load some defaults for the selected driver
   %driverdefaults = ( 'Pg' => { dbport => '',
-                                dbuser => 'sql-ledger',
+                                dbuser => 'Racoon-SQL-Ledger',
 		             dbdefault => 'template1',
 				dbhost => '',
 			 connectstring => $locale->text('Connect to')
@@ -967,7 +967,7 @@ sub dbdriver_defaults {
 			 connectstring => 'SID'
 			      },
                    'Sybase' => { dbport => '',
-		                dbuser => 'sql-ledger',
+		                dbuser => 'Racoon-SQL-Ledger',
 		             dbdefault => '',
 				dbhost => '',
 			 connectstring => $locale->text('Connect to')
@@ -985,7 +985,7 @@ sub dbselect_source {
 
   &dbdriver_defaults;
   
-  $form->{title} = "SQL-Ledger / ".$locale->text('Add Dataset');
+  $form->{title} = "Racoon-SQL-Ledger / ".$locale->text('Add Dataset');
   
   $form->{callback} = "$form->{script}?action=list_datasets&path=$form->{path}";
   
@@ -1107,7 +1107,7 @@ sub create_dataset {
 
   }
 
-  $form->{title} = "SQL-Ledger / ".$locale->text('Create Dataset');
+  $form->{title} = "Racoon-SQL-Ledger / ".$locale->text('Create Dataset');
   
   $form->header;
 
@@ -1270,7 +1270,7 @@ sub dbcreate {
   # copy logo files
   for $ext (qw(eps png)) {
     if (! -f "$templates/$form->{templates}/logo.$ext") {
-      open(TEMP, "$userspath/sql-ledger.$ext");
+      open(TEMP, "$userspath/Racoon-SQL-Ledger.$ext");
       open(NEW, ">$templates/$form->{templates}/logo.$ext");
       for (<TEMP>) { print NEW $_ }
       close(NEW);
@@ -1298,7 +1298,7 @@ sub dbcreate {
   $form->{charset} = $form->{encoding};
   $form->{dbname} = $form->{db};
   $form->{login} = "admin\@$form->{db}";
-  $form->{stylesheet} = "sql-ledger.css";
+  $form->{stylesheet} = "Racoon-SQL-Ledger.css";
   $form->{dateformat} = "mm-dd-yy";
   $form->{numberformat} = "1,000.00";
   $form->{dboptions} = "set DateStyle to 'POSTGRES, US'";
@@ -1355,7 +1355,7 @@ sub lock_dataset { &do_lock_system }
 
 sub lock_system {
   
-  $form->{title} = "SQL-Ledger / ";
+  $form->{title} = "Racoon-SQL-Ledger / ";
   
   if ($form->{dbname}) {
     $form->{title} .= $locale->text('Lock Dataset')." / ".$form->{dbname};

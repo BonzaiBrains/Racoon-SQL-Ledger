@@ -1,11 +1,11 @@
 #!/usr/bin/raku
 #
 ######################################################################
-# SQL-Ledger
+# Racoon-SQL-Ledger
 # Copyright (c) DWS Systems Inc.
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #######################################################################
 #
@@ -33,7 +33,7 @@ $| = 1;
 
 use SL::Form;
 
-eval { require "sql-ledger.conf"; };
+eval { require "Racoon-SQL-Ledger.conf"; };
 
 $form = new Form $userspath;
 
@@ -122,7 +122,7 @@ if (-f "$form->{path}/custom/$form->{login}/$form->{script}") {
 
 if ($form->{action}) {
   # window title bar, user info
-  $form->{titlebar} = "SQL-Ledger - $myconfig{name} - $myconfig{dbname}";
+  $form->{titlebar} = "Racoon-SQL-Ledger - $myconfig{name} - $myconfig{dbname}";
 
   &check_password;
 

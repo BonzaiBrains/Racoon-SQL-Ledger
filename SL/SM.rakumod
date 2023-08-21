@@ -1,9 +1,9 @@
 #=====================================================================
-# SQL-Ledger ERP
+# Racoon-SQL-Ledger ERP
 # Copyright (C) 2009
 #
 #  Author: DWS Systems Inc.
-#     Web: http://www.sql-ledger.com
+#     Web: https://github.com/BonzaiBrains/Racoon-SQL-Ledger
 #
 #======================================================================
 #
