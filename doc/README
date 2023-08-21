@@ -62,32 +62,32 @@ Some of the translation files are not 100% complete.
 If strings are missing, English is used instead.
 
 
-INSTALLATION WITH setup.pl:
+INSTALLATION WITH setup.raku:
 -----------------------------
 Make a directory on your system
 
   mkdir /usr/local/Racoon-SQL-Ledger
 
-Copy setup.pl to /usr/local/Racoon-SQL-Ledger
+Copy setup.raku to /usr/local/Racoon-SQL-Ledger
 
-run setup.pl as root and follow the prompts.
+run setup.raku as root and follow the prompts.
 
-  perl setup.pl
+  perl setup.raku
 
 Go to the next step, "PREPARE YOUR SQL DATABASE SERVER".
 
-VERY IMPORTANT: setup.pl tries to figure out your system
+VERY IMPORTANT: setup.raku tries to figure out your system
 but it will not succeed if your distribution decided
 to "hide" configuration files for your web server in some
 other file.
 
-If you cannot use setup.pl because of a proxy or firewall
-download the tar.gz file and pass the filename to setup.pl
+If you cannot use setup.raku because of a proxy or firewall
+download the tar.gz file and pass the filename to setup.raku
 
-  perl setup.pl Racoon-SQL-Ledger-3.0.0.tar.gz
+  perl setup.raku Racoon-SQL-Ledger-3.0.0.tar.gz
   
 
-INSTALLATION WITHOUT setup.pl:
+INSTALLATION WITHOUT setup.raku:
 --------------------------------
 unpack the tar.gz file in /usr/local
 
@@ -105,7 +105,7 @@ where httpd.conf is and copy the next section into the file
   Alias /Racoon-SQL-Ledger /usr/local/Racoon-SQL-Ledger/
   <Directory /usr/local/Racoon-SQL-Ledger>
     AllowOverride All
-    AddHandler cgi-script .pl
+    AddHandler cgi-script .raku
     AddDefaultCharset On
     Options ExecCGI Includes FollowSymlinks
     Order Allow,Deny
@@ -161,7 +161,7 @@ b) turn on script execution for the folder Racoon-SQL-Ledger
 You can control this with an .htaccess file
 
   Options +ExecCGI
-  DirectoryIndex login.pl
+  DirectoryIndex login.raku
 
 c) protect the users, template and spool directory with an .htpasswd file
 
@@ -198,7 +198,7 @@ CREATE A DATASET WITHOUT CREATE PRIVILEGES.
 CREATE DATASET:
 ---------------
 Load your web browser and connect to
-http://localhost/Racoon-SQL-Ledger/admin.pl
+http://localhost/Racoon-SQL-Ledger/admin.raku
 
 There is no password so just hit the Enter key or click
 on "Continue".
@@ -244,7 +244,7 @@ the name of the database in the field "Dataset".
 LOAD THE PROGRAM:
 ----------------------------
 Load your web browser and connect to
-http://localhost/Racoon-SQL-Ledger/login.pl
+http://localhost/Racoon-SQL-Ledger/login.raku
 
 
 SET UP USERS:
@@ -266,10 +266,10 @@ longer be able to log in.
 
 UPGRADING TO A NEWER VERSION:
 -----------------------------
-1. load admin.pl and lock the system
+1. load admin.raku and lock the system
 2. untar the new version over top
 3. check the doc directory for specific notes
-4. load admin.pl and unlock the system
+4. load admin.raku and unlock the system
 
 Please read the UPGRADE file in the doc directory
 for further instructions.
@@ -282,7 +282,7 @@ INSTALLATION CHECKLIST:
 3. edit httpd.conf
 4. edit Racoon-SQL-Ledger.conf
 5. add the database user Racoon-SQL-Ledger (or some other name)
-6. load admin.pl
+6. load admin.raku
 7. create datasets for companies
 
    In the Database section enter

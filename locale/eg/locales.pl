@@ -25,13 +25,13 @@ $c = $1 || 'UTF8';
 $charset = ($arg{c}) ? $c : "";
 
 opendir DIR, "$bindir" or die "$!";
-@progfiles = grep { /\.pl/ } readdir DIR;
+@progfiles = grep { /\.raku/ } readdir DIR;
 closedir DIR;
 
 # custom logins
 if (!$arg{n}) {
   if (opendir DIR, "$bindir/custom") {
-    @customlogins = grep !/(\.pl|\.)/, readdir DIR;
+    @customlogins = grep !/(\.raku|\.)/, readdir DIR;
     closedir DIR;
   }
 }
@@ -62,15 +62,15 @@ foreach $file (@progfiles) {
   
   &scanfile("$bindir/$file");
 
-  # scan custom/{module}.pl and custom/{login}/{module}.pl files
+  # scan custom/{module}.raku and custom/{login}/{module}.raku files
   &scanfile("$bindir/custom/$file");
 
   foreach $customlogin (@customlogins) {
     &scanfile("$bindir/custom/$customlogin/$file");
   }
   
-  # if this is the menu.pl file
-  if ($file eq 'menu.pl') {
+  # if this is the menu.raku file
+  if ($file eq 'menu.raku') {
     &scanmenu("$basedir/$menufile");
     &scanmenu("$bindir/custom/$menufile");
 
@@ -79,7 +79,7 @@ foreach $file (@progfiles) {
     }
   }
   
-  $file =~ s/\.pl//;
+  $file =~ s/\.raku//;
   
   if (-f "$file.missing") {
     eval { require "$file.missing"; };
@@ -164,7 +164,7 @@ $self{subs} = {
       open FH, ">$file.missing" or die "$! : missing";
 
       print FH qq|# module $file
-# add the missing texts and run locales.pl to rebuild
+# add the missing texts and run locales.raku to rebuild
 
 \$missing = {
 |;
@@ -292,7 +292,7 @@ sub scanfile {
   my $fh = new FileHandle;
   return unless open $fh, "$file";
 
-  $file =~ s/\.pl//;
+  $file =~ s/\.raku//;
   $file =~ s/$bindir\///;
   
   %temp = ();
@@ -321,7 +321,7 @@ sub scanfile {
   
   while (<$fh>) {
     # is this another file
-    if (/require\s+\W.*\.pl/) {
+    if (/require\s+\W.*\.raku/) {
       my $newfile = $&;
       $newfile =~ s/require\s+\W//;
       $newfile =~ s/\$form->\{path\}\///;

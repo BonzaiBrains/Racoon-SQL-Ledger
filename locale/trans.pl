@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # syntax:
-# trans.pl -s -l br de ve
+# trans.raku -s -l br de ve
 # -s send file to email listed in trans.email
 # -l br de ... only process these directories
 
@@ -54,8 +54,8 @@ foreach $dir (sort @localedir) {
   close(FH);
   chomp $language;
 
-  # run locales.pl
-  @a = ("perl", "locales.pl", "-n", "-m");
+  # run locales.raku
+  @a = ("perl", "locales.raku", "-n", "-m");
   push @a, "-a" if (-f "all");
   system(@a) == 0 or die "system @a failed: $?";
 

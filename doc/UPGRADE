@@ -8,10 +8,10 @@ should read the sections from v1.8.6 up to v2.6.27
 If there is no section for a range of versions no additional steps
 are required.
 
-The software can be upgraded using setup.pl. If setup.pl cannot
+The software can be upgraded using setup.raku. If setup.raku cannot
 download the file over the Internet (proxy, missing utilities, etc)
 download the tarball with your browser and save the file.
-You may then proceed with a manual installation or let setup.pl
+You may then proceed with a manual installation or let setup.raku
 do the work for you.
   
 The steps to do it yourself are:
@@ -28,7 +28,7 @@ The steps to do it yourself are:
    Note: replace nobody:nogroup with your web server user and group
 
 
-Using setup.pl passing filename:
+Using setup.raku passing filename:
 --------------------------------
 1. download Racoon-SQL-Ledger-x.x.x.tar.gz and save in the Racoon-SQL-Ledger folder
 
@@ -40,15 +40,15 @@ Using setup.pl passing filename:
 
    $ su root
 
-4. run setup.pl from the commandline
+4. run setup.raku from the commandline
 
-   # ./setup.pl Racoon-SQL-Ledger-x.x.x.tar.gz
+   # ./setup.raku Racoon-SQL-Ledger-x.x.x.tar.gz
    
 
 Upgrading Datasets:
 -------------------
 Datasets are upgraded when a user logs in. There is no need to load
-admin.pl, there is also no need to install intermediate versions, all
+admin.raku, there is also no need to install intermediate versions, all
 the upgrade steps are included in the current version.
 
 The sections below describe additional steps required such as
@@ -199,7 +199,7 @@ with 'vendor' and 'shipto'.
 
 3. create a new set of templates
 
-  * load admin.pl and edit one of the user's
+  * load admin.raku and edit one of the user's
   * in the "New Templates" field enter "new" and save the user
   * step back in your browser so you have the same screen again
     as before
@@ -261,7 +261,7 @@ Version 2.8.0 to 2.8.2
 
    ERROR:  trigger "del_recurring" for table "oe" does not exist
 
-   load admin.pl and "Unlock" the system and log in again.
+   load admin.raku and "Unlock" the system and log in again.
 
 NOTE: The error is intentional and may or may not show up on your system.
 

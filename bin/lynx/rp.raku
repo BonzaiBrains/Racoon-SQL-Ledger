@@ -1316,7 +1316,7 @@ print qq|
 <form method="post" name="main" action="$form->{script}" />
 |;
 
-  # created in RP.pm
+  # created in RP.rakumod
   if ($form->{fromyear} && $form->{frommonth}) {
     delete $form->{fromdate};
     delete $form->{todate};

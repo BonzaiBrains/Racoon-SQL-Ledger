@@ -186,7 +186,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5800', 'Refusjon av sykepenger', 'A','', 'E', '');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5820', 'Refusjon av arbeidsgiveravgift', 'A','', 'E', '');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5920', 'Yrkesskadeforsikring', 'A','', 'E', '');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5930', 'Andre ikke arb.giv.avg.pliktige forsikr.', 'A','', 'E', '');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5930', 'Andre ikke arb.giv.avg.rakuiktige forsikr.', 'A','', 'E', '');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5950', 'Personalforsikring', 'A','', 'E', '');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('5960', 'Gaver til ansatte', 'A','', 'E', '');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('6', 'Andre driftskostnader, av- og nedskrivninger', 'H', '', 'I', '');

@@ -218,7 +218,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1882','Egna aktier ','A','202','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1886','Aktier i koncernf','A','202','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1889','Aktier i övr för','A','202','A','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1890','Värdere. kortfr.plac','A','203','A','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1890','Värdere. kortfr.rakuac','A','203','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('19','Kassa och Bank','H','','A','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1900','Observationskonto','A','200','A','AR_paid:AP_paid');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('1910','Kassa ','A','200','A','AR_paid:AP_paid');
@@ -1057,7 +1057,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7510','Lagstadgade soc.avg.','A','520','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7511','Soc.avg.löner/ers.','A','520','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7512','Soc.avg.förmånsvärd','A','520','E','AP_amount:IC_cogs:IC_expense');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7515','Soc.avg.sk.pl.ers','A','520','E','AP_amount:IC_cogs:IC_expense');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7515','Soc.avg.sk.raku.ers','A','520','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7516','Soc.avg.på arvoden','A','520','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7518','Soc.avg.bruttolönavd','A','520','E','AP_amount:IC_cogs:IC_expense');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('7519','Soc.av.sem/löneskuld','A','520','E','AP_amount:IC_cogs:IC_expense');
@@ -1193,7 +1193,7 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8300','Rta-int. oms.tillg','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8310','Rta-int. oms.tillg','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8311','Rta-int. från bank ','A','568','I','AR_amount');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8312','Rta-int.korts.plac','A','568','I','AR_amount');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8312','Rta-int.korts.rakuac','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8313','Rta-int.korts.fordr.','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8314','Skattefria ränteint. ','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8317','Rt-int. dold rt-komp','A','568','I','AR_amount');
@@ -1201,14 +1201,14 @@ insert into chart (accno,description,charttype,gifi_accno,category,link) values 
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8330','Valutakursvinster ','A','566','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8331','Valutakursvinster ','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8336','Valutakursförluster','A','567','I','AR_amount');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8340','Utd.kortfr.plac.','A','568','I','AR_amount');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8350','Res.förs.kortfr.plac','A','568','I','AR_amount');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8340','Utd.kortfr.rakuac.','A','568','I','AR_amount');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8350','Res.förs.kortfr.rakuac','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8360','Övr.rt-int.konc.före','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8361','Övr.rt-int.moderföre','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8362','Övr.rt-int.dotterför','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8363','Övr.rt-int.övr ko.fö','A','568','I','AR_amount');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8370','Ns kortfr.placeringa','A','569','I','');
-insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8380','Åf ns k-fr.placering','A','568','I','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8370','Ns kortfr.rakuaceringa','A','569','I','');
+insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8380','Åf ns k-fr.rakuacering','A','568','I','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8390','Övr.finansiella int. ','A','568','I','AR_amount');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('84','Rtakostn och liknande resultatposter ','H','','I','');
 insert into chart (accno,description,charttype,gifi_accno,category,link) values ('8400','Rta-kostn','A','569','E','AP_amount');

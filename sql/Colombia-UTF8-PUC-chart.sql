@@ -335,7 +335,7 @@ INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VA
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('4235', 'SERVICIOS', 'H', 'I', '', '4235');
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('423595', 'OTROS SERVICIOS', 'H', 'I', '', '423595');
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('4240', 'UTILIDAD EN VENTA DE INVERSIONES', 'H', 'I', '', '4240');
-INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('4245', 'UTIL.EN VENTA PROP.PLANTA Y EQUI', 'H', 'I', '', '4245');
+INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('4245', 'UTIL.EN VENTA PROP.rakuANTA Y EQUI', 'H', 'I', '', '4245');
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('4250', 'RECUPERACIONES', 'H', 'I', '', '4250');
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('425005', 'DEUDAS MALAS', 'H', 'I', '', '425005');
 INSERT INTO chart (accno, description, charttype, category, link, gifi_accno) VALUES ('425015', 'RECLAMOS', 'H', 'I', '', '425015');

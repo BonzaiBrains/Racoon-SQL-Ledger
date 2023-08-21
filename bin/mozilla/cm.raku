@@ -8,7 +8,7 @@
 #======================================================================
 #
 # Attach Reference Documents to transactions
-# CMS is in rd.raku and RD.pm
+# CMS is in rd.raku and RD.rakumod
 #
 #======================================================================
 
