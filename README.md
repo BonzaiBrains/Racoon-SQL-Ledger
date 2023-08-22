@@ -65,14 +65,18 @@
  -----------------------------
  Make a directory on your system
  
-   mkdir /usr/local/Racoon-SQL-Ledger
- 
+```
+mkdir /usr/local/Racoon-SQL-Ledger
+```
+
  Copy setup.raku to /usr/local/Racoon-SQL-Ledger
  
  run setup.raku as root and follow the prompts.
  
-   Raku setup.raku
- 
+```
+Raku setup.raku
+```
+
  Go to the next step, "PREPARE YOUR SQL DATABASE SERVER".
  
  VERY IMPORTANT: setup.raku tries to figure out your system
@@ -83,8 +87,9 @@
  If you cannot use setup.raku because of a proxy or firewall
  download the tar.gz file and pass the filename to setup.raku
  
-   Raku setup.raku Racoon-SQL-Ledger-X.X.X.tar.gz
-   
+```
+Raku setup.raku Racoon-SQL-Ledger-X.X.X.tar.gz
+```
  
  INSTALLATION WITHOUT setup.raku:
  --------------------------------
@@ -101,6 +106,7 @@
  create the file Racoon-SQL-Ledger-httpd.conf in the same location
  where httpd.conf is and copy the next section into the file
  
+```
    Alias /Racoon-SQL-Ledger /usr/local/Racoon-SQL-Ledger/
    <Directory /usr/local/Racoon-SQL-Ledger>
      AllowOverride All
@@ -117,12 +123,15 @@
      Order Deny,Allow
      Deny from All
    </Directory>
- 
+ ```
+
  edit httpd.conf and add
  
+```
    # Racoon-SQL-Ledger
    Include /config_directory/Racoon-SQL-Ledger-httpd.conf
- 
+ ```
+
  Note: use an absolute or relative path to include
  the configuration in your httpd.conf file.
  
@@ -145,8 +154,10 @@
  ---------------
  change directory to /usr/local/Racoon-SQL-Ledger
  
- # chown -hR nobody:nogroup users templates css spool images
- 
+```
+ $ chown -hR nobody:nogroup users templates css spool images
+ ```
+
  replace nobody:nogroup with the web server user and group.
  Some systems use apache:apache, www, www-data, ...
  
