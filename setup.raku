@@ -1,4 +1,4 @@
-#!/usr/bin/raku
+#!/usr/bin/env raku
 #
 ######################################################################
 # Racoon-SQL-Ledger ERP Installer
@@ -44,7 +44,7 @@ $lwp = !($@);
 
 unless ($lwp || $wget || $lynx || $filename) {
   die "You must have either lynx, wget or LWP installed or specify a filename.
-perl $0 <filename>\n";
+raku $0 <filename>\n";
 }
 
 if ($filename) {

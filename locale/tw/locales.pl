@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env raku
 
 # -n do not include custom scripts
 # -a build all file

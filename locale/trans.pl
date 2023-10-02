@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env raku
 
 # syntax:
 # trans.raku -s -l br de ve

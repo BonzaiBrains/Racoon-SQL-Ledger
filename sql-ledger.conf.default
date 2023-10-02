@@ -45,7 +45,7 @@ $pdftk = 1;
 $ENV{PATH} .= ":/usr/local/bin";
 
 # on mac os X using Fink's Perl libs, add the path
-#$ENV{PERL5LIB} .= ":/sw/lib/perl5";
+#$ENV{RAKULIB} .= ":/sw/lib/RAKU";
 
 # DB2, Default dataset is expected to be LEDGER
 #$ENV{DB2INSTANCE} = "db2inst1";
